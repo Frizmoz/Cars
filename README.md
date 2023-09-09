@@ -30,20 +30,20 @@
 После клонирования репозитория запустите скрипт script.py. В консоли вам будет выдана ссылка, перейдите по ней.
 
 
-![ui-sta | 450](https://www.sunhome.ru/i/wallpapers/57/raiskoe-ozero.orig.jpg)
+![ui-sta | 450](https://i.imgur.com/Rk92FZy.png)
 
 Далее вам необходимо загрузить по одному файлу в каждую из двух областей:
 1. В первую область загрузите свой **csv** файл.
 
-![ui-folder | 450](screens\\Screenshot_4.png)
+![ui-folder | 450](https://i.imgur.com/3GVCAne.png)
 
 2. Во вторую область загрузите файл **RandomForest.sav** из репозитория.
 
-![ui-2 | 450](screens\\Screenshot_5.png)
+![ui-2 | 450](https://i.imgur.com/goBHnez.png)
 
 После  этого нажмите на кнопку **Submit**.
 
-![ui-3 | 450](screens\\Screenshot_6.png)
+![ui-3 | 450](https://i.imgur.com/Ia4QxdS.png)
 
 Ожидайте до появления файла **submission_file.csv** в папке репозитория. В нем записаны данные о каждом клиенте, где последний стобец показывает вероятность покупки машиноместа клиентом в ближайщие 3 месяца.
 
