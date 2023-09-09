@@ -15,13 +15,14 @@
 	- [sklearn](https://scikit-learn.org)
 	- [catboost](https://catboost.ai)
 	- [gradio](https://www.gradio.app)
+	- [pickle](https://docs.python.org/3/library/pickle.html)
 
 
 ## Для запуска нужно ✨
 
 - Установить [Python](https://python.org/)
 - Установить библиотеки:
-    `pip install pandas seaborn numpy matplotlib sklearn catboost gradio`
+    `pip install pandas seaborn numpy matplotlib sklearn catboost gradio pickle`
 - Скачать репозиторий проекта по [ссылке](https://github.com/Frizmoz/Cars), используя команду: git clone https://github.com/Frizmoz/Cars
 - Запустить скрипт
 
