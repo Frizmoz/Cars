@@ -6,26 +6,22 @@ from gradio.components import File,Dataframe
 # Загрузить данные и вывести информацию о датасете
 def load_data(file,model_weights):
     df = pd.read_csv(file.name,low_memory=False)
-
-    #Вычислите процент пропущенных данных для каждого столбца
-    missing_percentage = (df.isnull().sum() / len(df)) * 100
-    #Выберите столбцы, в которых пропущено менее или равно 1% данных
-    columns_to_keep = missing_percentage[missing_percentage >= 1].index
-    #Выведите названия столбцов, которые соответствуют вашему критерию
-    df.drop(columns=columns_to_keep,inplace=True)
-    df.dropna(inplace=True)
     
-    # Удалям лишние столбцы, котрые были удален при тренеровки
-    X = df.drop(columns=['target','report_date','col1454','client_id','col2183', 'col2181', 'col2176',
-       'col2175', 'col2184', 'col2167', 'col2174', 'col2173', 'col2189',
-       'col2168', 'col1453'],axis=1)
+    # Отсвляем только те столбцы на котрых тренеровали модель ранее 
+    df = df[['client_id','col2169', 'col2170', 'col2171', 'col2172', 'col2177', 'col2178',
+           'col2179', 'col2180', 'col2182', 'col2185', 'col2186', 'col2187',
+           'col2188', 'col2190', 'col2220', 'col2221', 'col2222', 'col2292',
+           'col2293', 'col2294', 'col2316', 'col2317', 'col2318', 'col2340',
+           'col2341', 'col2342', 'col2364', 'col2365', 'col2366', 'col2388',
+           'col2389', 'col2390', 'col2663']]
+    df.dropna(inplace=True)
+    X=df.drop(columns=['client_id'],axis=1)
 
     # Инициализируйте и обучите модель случайного леса
     load_model = pickle.load(open(model_weights.name, 'rb'))
 
     # Получите вероятности классов для каждой строки
     probabilities = load_model.predict_proba(X)
-
     # Добавьте столбец с вероятностями в DataFrame
     df['score'] = probabilities[:, 1]  # Используйте вероятности класса 1
 
@@ -34,7 +30,8 @@ def load_data(file,model_weights):
     d['client_id']=df['client_id']
     d['score']=df['score']
     df.to_csv('submission_file.csv',index= False)
-    
+
+    # Датасет целевой аудитории 
     dff=pd.DataFrame()
     dff['client_id']=d['client_id']
     dff['score']=d['score']
