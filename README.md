@@ -66,6 +66,4 @@
 
 [EgorKA027](https://github.com/EgorKA027) - курирование проекта, обработка данных, создание презентации
 
-[RalinaT18](https://github.com/RalinaT18) - помощь в дизайне
-
 [ICoryphaeusI](https://github.com/ICoryphaeusI) - помощь в дизайне, разработка вспомогательных файлов
